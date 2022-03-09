@@ -4,8 +4,6 @@ You can use the [editor on GitHub](https://github.com/ExpandingShapes/CS-APP/edi
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 ### Problem 1.1
-
-Problem 1.1
 Suppose you work as a truck driver, and you have been hired to carry a load of
 potatoes from Boise, Idaho, to Minneapolis, Minnesota, a total distance of 2,500
 kilometers. You estimate you can average 100 km/hr driving within the speed
@@ -42,6 +40,22 @@ Now we can find new speed for the truck:
 u_new = k * u_old
 u_new = 3.02 * 100
 u_new = 302 km/hr
+
+### Problem 1.2
+A car manufacturing company has promised their customers that the next release
+of a new engine will show a 4× performance improvement. You have been as-
+signed the task of delivering on that promise. You have determined that only 90%
+of the engine can be improved. How much (i.e., what value of k) would you need
+to improve this part to meet the overall performance target of the engine?
+
+## Solution
+This time we have S = 4, α = 90% and we are to find k using the same old formula
+S = 1/(1 - α + α/k)
+4 = 1/(1 - 0.9 + 0.9/k)
+...
+k = 0.9/0.15
+k = 6
+Hence, the implovable part of the engine must be 6 times better than before.
 
 ### Markdown
 
