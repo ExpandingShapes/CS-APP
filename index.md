@@ -70,6 +70,28 @@ B. 1010111001001001 = 0xAE49
 C. 0xA8B3D = 10101000101100111101_2
 D. 1100100010110110010110 = 0x122D96
 
+### Problem 2.2 Fill in the blank entries in the following table, giving the decimal and hexadecimal representations of different powers of 2:
+|        n          |   2^n (decimal)   | 2^n (hexadecimal) |
+| ----------------- | ----------------- | ----------------- |
+|        5          |         32        |        0x20       |
+|        23         |                   |                   |
+|                   |      32,768       |                   |
+|                   |                   |       0x2000      |
+|        12         |                   |                   |
+|                   |         64        |                   |
+|                   |                   |       0x100       |
+
+## Solution
+|        n          |   2^n (decimal)   | 2^n (hexadecimal) |
+| ----------------- | ----------------- | ----------------- |
+|        5          |         32        |        0x20       |
+|        23         |_____8,388,608_____|______0x800000_____|
+|________15_________|      32,768       |_______0x8000______|
+|________13_________|______8,192________|       0x2000      |
+|        12         |______4,096________|_______0x100_______|
+|________6__________|         64        |________0x40_______|
+|________12_________|______4,096________|       0x100       |
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
