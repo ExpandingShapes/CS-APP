@@ -92,6 +92,28 @@ D. 1100100010110110010110 = 0x122D96
 |________6__________|         64        |________0x40_______|
 |________12_________|______4,096________|       0x100       |
 
+
+### Problem 2.3 A single byte can be represented by 2 hexadecimal digits. Fill in the missing entries in the following table, giving the decimal, binary, and hexadecimal values of different byte patterns:
+|        Decimal    |   Binary          |   Hexadecimal     |
+| ----------------- | ----------------- | ----------------- |
+|        0          |       00000000    |        0x00       |
+|        158        |                   |                   |
+|        76         |                   |                   |
+|       145         |                   |                   |
+|                   |         10101110  |                   |
+|                   |         00111100  |                   |
+|                   |      11110001     |                   |
+
+## Solution
+|        Decimal    |   Binary          |   Hexadecimal     |
+| ----------------- | ----------------- | ----------------- |
+|        0          |      00000000     |        0x00       |
+|        158        |      10011110     |        0x9E       |
+|        76         |      1001100      |        0x4C       |
+|       145         |  10010001         |        0x91       |
+|       174         |         10101110  |        0xAE       |
+|       60          |         00111100  |        0x3C       |
+|       241         |      11110001     |        0xF1       |
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
