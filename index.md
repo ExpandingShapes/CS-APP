@@ -57,6 +57,19 @@ k = 0.9/0.15
 k = 6
 Hence, the implovable part of the engine must be 6 times better than before.
 
+### Problem 1.2
+Perform the following number conversions:
+A. 0x25B9D2 to binary
+B. binary 1010111001001001 to hexadecimal
+C. 0xA8B3D to binary
+D. binary 1100100010110110010110 to hexadecimal
+
+## Solution
+A. 0x25B9D2 = 001001011011100111010010_2
+B. 1010111001001001 = 0xAE49
+C. 0xA8B3D = 10101000101100111101_2
+D. 1100100010110110010110 = 0x122D96
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -84,7 +97,3 @@ For more details see [Basic writing and formatting syntax](https://docs.github.c
 ### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ExpandingShapes/CS-APP/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
