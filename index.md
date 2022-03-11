@@ -104,6 +104,12 @@ D. 1100100010110110010110 = 0x122D96
 |                   |         00111100  |                   |
 |                   |      11110001     |                   |
 
+|        Decimal    |   Binary          |   Hexadecimal     |
+| ----------------- | ----------------- | ----------------- |
+|                   |                   |        0x75       |
+|                   |                   |        0xBD       |
+|                   |                   |        0xF5       |
+
 ## Solution
 |        Decimal    |   Binary          |   Hexadecimal     |
 | ----------------- | ----------------- | ----------------- |
@@ -114,12 +120,26 @@ D. 1100100010110110010110 = 0x122D96
 |       174         |         10101110  |        0xAE       |
 |       60          |         00111100  |        0x3C       |
 |       241         |      11110001     |        0xF1       |
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+|        Decimal    |   Binary          |   Hexadecimal     |
+| ----------------- | ----------------- | ----------------- |
+|        117        |     01110101      |        0x75       |
+|        189        |     10111101      |        0xBD       |
+|        245        |     11110101      |        0xF5       |
 
-```markdown
-Syntax highlighted code block
+
+### Problem 2.4 Without converting the numbers to decimal or binary, try to solve the following arithmetic problems, giving the answers in hexadecimal. Hint: Just modify the methods you use for performing decimal addition and subtraction to use base 16.
+A. 0x605c + 0x5 = 
+B. 0x605c − 0x20 =
+C. 0x605c + 32 =
+D. 0x60fa − 0x605c =
+
+## Solution
+A. 0x605c + 0x5 = 0x6061
+B. 0x605c − 0x20 = 0x603C
+C. 0x605c + 32 = 0x607C
+D. 0x60fa − 0x605c = 0x60AE
+
 
 # Header 1
 ## Header 2
