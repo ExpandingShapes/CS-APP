@@ -140,6 +140,24 @@ B. 0x605c − 0x20 = 0x603C
 C. 0x605c + 32 = 0x607C
 D. 0x60fa − 0x605c = 0x60AE
 
+### Problem 2.5
+Consider the following three calls to show_bytes:
+ ```
+int a = 0x12345678;
+byte_pointer ap = (byte_pointer) &a;
+show_bytes(ap, 1); /* A. */
+show_bytes(ap, 2); /* B. */
+show_bytes(ap, 3); /* C. */
+```
+Indicate the values that will be printed by each call on a little-endian machine and on a big-endian machine:
+A. Little endian:          Big endian:         
+B. Little endian:          Big endian:         
+C. Little endian:          Big endian:         
+
+## Solution
+A. Little endian: 78       Big endian: 78         
+B. Little endian: 78 56    Big endian: 56 78      
+C. Little endian: 78 56 34 Big endian: 34 56 78
 
 # Header 1
 ## Header 2
