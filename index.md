@@ -159,6 +159,21 @@ A. Little endian: 78       Big endian: 78
 B. Little endian: 78 56    Big endian: 56 78      
 C. Little endian: 78 56 34 Big endian: 34 56 78
 
+### Problem 2.6
+Using show_int and show_float, we determine that the integer 2607352 has hexa- decimal representation 0x0027C8F8, while the floating-point number 3510593.0 has hexadecimal representation 0x4A1F23E0.
+A. Write the binary representations of these two hexadecimal values.
+B. Shift these two strings relative to one another to maximize the number of matching bits. How many bits match?
+C. What parts of the strings do not match?
+## Solution
+A.
+0x0027C8F8 = 0000 0000 0010 0111 1100 1000 1111 1000
+0x4A1F23E0 = 0100 1010 0001 1111 0010 0011 1110 0000
+B.
+00000000001001111100100011111000
+           *********************
+  01001010000111110010001111100000
+C. There is one part before the matching bits and one part before it that don't not match.
+
 # Header 1
 ## Header 2
 ### Header 3
