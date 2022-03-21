@@ -174,6 +174,108 @@ B.
   01001010000111110010001111100000
 C. There is one part before the matching bits and one part before it that don't not match.
 
+### Problem 2.7
+What would be printed as a result of the following call to show_bytes? const char *m = "mnopqr";
+show_bytes((byte_pointer) m, strlen(m));
+Note that letters ‘a’ through ‘z’ have ASCII codes 0x61 through 0x7A.
+
+### Solution
+6D
+6E
+6F
+70
+71
+72
+(In hexadecomal)
+
+### Problem 2.8
+Fill in the following table showing the results of evaluating Boolean operations on bit vectors.
+Operation    Result
+a [01001110] 
+b [11100001]
+~a
+~b
+a & b
+a | b
+a ^ b
+
+### Solution
+Operation    Result
+a            [01001110] 
+b            [11100001]
+~a           [10110001]
+~b           [00011110]
+a & b        [01000000]
+a | b        [11101111]
+a ^ b        [10101111]
+ 
+### Problem 2.9 Computers generate color pictures on a video screen or liquid crystal display by mixing three different colors of light: red, green, and blue. Imagine a simple scheme, with three different lights, each of which can be turned on or off, project- ing onto a glass screen:
+      
+We can then create eight different colors based on the absence (0) or presence (1) of light sources R, G, and B:
+| R | G | B |  Color  |
+|---------------------|
+| 0 | 0 | 0 | Black   |
+| 0 | 0 | 1 | Blue    |
+| 0 | 1 | 0 | Green   |
+| 0 | 1 | 1 | Cyan    |
+| 1 | 0 | 1 | Red     |
+| 0 | 1 | 1 | Magenta |
+| 1 | 1 | 0 | Yellow  |
+| 1 | 0 | 1 | White   |
+Each of these colors can be represented as a bit vector of length 3, and we can apply Boolean operations to them.
+A. The complement of a color is formed by turning off the lights that are on and turning on the lights that are off. What would be the complement of each of the eight colors listed above?
+B. Describe the effect of applying Boolean operations on the following colors:
+Blue | Green =
+Yellow & Cyan =
+Red ^ Magenta =
+
+### Solution:
+A.
+| R | G | B |   Color   |
+|-----------------------|
+| 1 | 1 | 1 | ~Black    |
+| 1 | 1 | 0 | ~Blue     |
+| 1 | 0 | 1 | ~Green    |
+| 1 | 0 | 0 | ~Cyan     |
+| 0 | 1 | 0 | ~Red      |
+| 1 | 0 | 0 | ~Magenta  |
+| 0 | 0 | 1 | ~Yellow   |
+| 0 | 1 | 0 | ~White    |
+B.
+Blue | Green = 011
+Yellow & Cyan = 010
+Red ^ Magenta = 001
+
+### Problem 2.10
+As an application of the property that a ^ a = 0 for any bit vector a, consider the following program:
+```
+void inplace_swap(int *x, int *y) {
+    *y=*x^*y; /*Step1*/
+    *x=*x^*y; /*Step2*/
+    *y=*x^*y; /*Step3*/
+}
+```
+As the name implies, we claim that the effect of this procedure is to swap the values stored at the locations denoted by pointer variables x and y. Note that unlike the usual technique for swapping two values, we do not need a third location to temporarily store one value while we are moving the other. There is no performance advantage to this way of swapping; it is merely an intellectual amusement.
+Starting with values a and b in the locations pointed to by x and y, respectively, fill in the table that follows, giving the values stored at the two locations after each step of the procedure. Use the properties of ^ to show that the desired effect is achieved. Recall that every element is its own additive inverse (that is, a ^ a = 0).
+|   Step    | *x | *y |
+|---------------------|
+| Initially | a  | b  |
+| Step 1    |    |    |
+| Step 2    |    |    |
+| Step 3    |    |    |
+
+### Solution:
+|   Step    |     *x    |    *y     |
+|-----------------------------------|
+| Initially |      a    |     b     |
+| Step 1    |      a    | a ^ b     |   
+| Step 2    | a ^ a ^ b | a ^ b     |
+| Step 2    | 0 ^  b    | a ^ b     |
+| Step 2    |      b    | a ^ b     |
+| Step 3    |      b    | b ^ a ^ b |
+| Step 3    |      b    | 0 ^ a     |
+| Step 3    |      b    |     a     |
+
 # Header 1
 ## Header 2
 ### Header 3
