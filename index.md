@@ -276,16 +276,40 @@ Starting with values a and b in the locations pointed to by x and y, respectivel
 | Step 3    |      b    | 0 ^ a     |
 | Step 3    |      b    |     a     |
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+### Problem 2.11
+Armed with the function inplace_swap from Problem 2.10, you decide to write
+code that will reverse the elements of an array by swapping elements from opposite
+ends of the array, working toward the middle.
+You arrive at the following function:
+```
+void reverse_array(int a[], int cnt) {
+ int first, last;
+ for (first = 0, last = cnt-1; first <= last; first++, last--)
+  inplace_swap(&a[first], &a[last]);
+}
+```
+When you apply your function to an array containing elements 1, 2, 3, and 4,
+you find the array now has, as expected, elements 4, 3, 2, and 1. When you try it
+on an array with elements 1, 2, 3, 4, and 5, however, you are surprised to see that
+the array now has elements 5, 4, 0, 2, and 1. In fact, you discover that the code
+always works correctly on arrays of even length, but it sets the middle element to
+0 whenever the array has odd length.
+A. For an array of odd length cnt = 2k + 1, what are the values of variables first and last in the final iteration of function reverse_array?
+B. Why does this call to function inplace_swap set the array element to 0?
+C. What simple modification to the code for reverse_array would eliminate this problem?
 
-1. Numbered
-2. List
-
+### Solution:
+A. Both first and last are equal to k in the final iteration.
+B. x and y point to the same location. That's why *x ^ *y results in 0 and thus the middle elements of a new array is 0.
+C. All we have to do is to replace sign <= with < since there is no use to swap middle element with itself (in case an array has odd number of elements):
+```
+void reverse_array(int a[], int cnt) {
+    int first, last;
+    for (first = 0, last = cnt - 1; first <= last; first++, last--)
+        inplace_swap(&a[first], &a[last]);
+}
+```
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
