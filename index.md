@@ -310,13 +310,83 @@ void reverse_array(int a[], int cnt) {
         inplace_swap(&a[first], &a[last]);
 }
 ```
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+### Problem 2.12:
+Write C expressions, in terms of variable x, for the following values. Your code should work for any word size w ≥ 8. For reference, we show the result of evaluating the expressions for x = 0x87654321, with w = 32.
+A. The least significant byte of x, with all other bits set to 0. [0x00000021]
+B. All but the least significant byte of x complemented, with the least significant byte left unchanged. [0x789ABC21]
+C. The least significant byte set to all ones, and all other bytes of x left unchanged. [0x876543FF]
+
+### Solution:
+```
+int x = 0x87654321;
+```
+A. x & 0x000000FF
+B. (~x & 0xFFFFFF00) | (x & 0x000000FF)
+C. (x & 0xFFFFFF00) | 0xFF
+
+### Problem 2.13:
+The Digital Equipment VAX computer was a very popular machine from the late 1970s until the late 1980s. Rather than instructions for Boolean operations and and or, it had instructions bis (bit set) and bic (bit clear). Both instructions take a data word x and a mask word m. They generate a result z consisting of the bits of x modified according to the bits of m. With bis, the modification involves setting z to 1 at each bit position where m is 1. With bic, the modification involves setting z to 0 at each bit position where m is 1.
+To see how these operations relate to the C bit-level operations, assume we have functions bis and bic implementing the bit set and bit clear operations, and that we want to use these to implement functions computing bitwise operations | and ^, without using any other C operations. Fill in the missing code below. Hint: Write C expressions for the operations bis and bic.
+```
+/* Declarations of functions implementing operations bis and bic */
+int bis(int x, int m);
+int bic(int x, int m);
+/* Compute x|y using only calls to functions bis and bic */
+int bool_or(int x, int y) {
+int result = _____;
+    return result;
+}
+/* Compute x^y using only calls to functions bis and bic */
+int bool_xor(int x, int y) {
+int result = _____;
+    return result;
+}
 ```
 
+### Solution:
+
+```
+int bis(int x, int m) {
+    return x | m;
+}
+
+int bic(int x, int m) {
+    return x & ~m;
+}
+
+int bool_or(int x, int y) {
+    return bis(x, y);
+}
+
+int bool_xor(int x, int y) {
+	   return bis(bic(x, y), bic(y, x));
+}
+```
+
+### Problem 2.14:
+Suppose that a and b have byte values 0x55 and 0x46, respectively. Fill in the following table indicating the byte values of the different C expressions:
+| Expression |   Value | Expression | Value |
+|-------------------------------------------|
+|   a & b    |         |   a && b   |       |
+|   a | b    |         |   a || b   |       |
+|   ~a | ~b  |         |   ~a || ~b |       |
+|   a & !b   |         |   a && !b  |       |
+
+### Solution:
+| Expression |   Value | Expression | Value |
+|-------------------------------------------|
+|   a & b    |   0x44  |   a && b   |   1   |
+|   a | b    |   0x57  |   a || b   |   1   |
+|   ~a | ~b  |   0xBB  |   ~a || ~b |   1   |
+|   a & !b   |   0     |   a && !b  |   0   |
+
+
+### Problem 2.15:
+Using only bit-level and logical operations, write a C expression that is equivalent to x == y. In other words, it will return 1 when x and y are equal and 0 otherwise.
+
+### Solution:
+```
+!(x ^ y && 1)
+```
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ExpandingShapes/CS-APP/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
