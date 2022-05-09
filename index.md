@@ -389,4 +389,24 @@ Using only bit-level and logical operations, write a C expression that is equiva
 ```
 !(x ^ y && 1)
 ```
+### Problem 2.16:
+Fill in the table below showing the effects of the different shift operations on single- byte quantities. The best way to think about shift operations is to work with binary representations. Convert the initial values to binary, perform the shifts, and then convert back to hexadecimal. Each of the answers should be 8 binary digits or 2 hexadecimal digits.
+|               |              |   Logical    | Arithmetical |
+|      a        |   a << 2     |   a >> 3     |    a >> 3    |
+| Hex  | Binary | Hex | Binary | Hex | Binary | Hex | Binary |
+|------------------------------------------------------------|
+| 0xD4 |________|_____|________|_____|________|_____|________|
+| 0x64 |________|_____|________|_____|________|_____|________|
+| 0x72 |________|_____|________|_____|________|_____|________|
+| 0x44 |________|_____|________|_____|________|_____|________|
+
+### Solution:
+|                 |                 |     Logical     |   Arithmetical  |
+|        a        |     a << 2      |     a >> 3      |      a >> 3     |
+| Hex  |  Binary  | Hex  |  Binary  | Hex  |  Binary  | Hex  |  Binary  |
+|-----------------------------------------------------------------------|
+| 0xD4 | 11010100 | 0x50 | 01010000 | 0x1A | 00011010 | 0xFA | 11111010 |
+| 0x64 | 01100100 | 0x90 | 10010000 | 0x0C | 00001100 | 0x0C | 00001100 |
+| 0x72 | 01110010 | 0xC8 | 11001000 | 0x0C | 00001100 | 0x0C | 00001100 |
+| 0x44 | 01000100 | 0x10 | 00010000 | 0x08 | 00001000 | 0x08 | 00001000 |
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
